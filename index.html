@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //Global scope
+    let data = 25;
+    console.log(data);
+
+    function myfun() {
+      data = 56;
+    }
+    myfun();
+    console.log(data);
+
+    //Local Scope
+    function myfunc() {
+      let data1 = 560;
+      console.log(data1);
+    }
+    myfunc();
+    //console.log(data1);
+
+    function outerFunction() {
+      var a = 5;
+      function innerFunction() {
+        var a = 10;
+        console.log(a);
+      }
+      innerFunction();
+      console.log(a);
+    }
+    outerFunction();
+
+    function sum() {
+      var a = 5;
+      function sumFun() {
+        var b = 10;
+        console.log(a + b);
+      }
+      sumFun();
+    }
+    sum();
+
+    function add(x, y) {
+      var sum = x + y;
+      return sum;
+    }
+    let add1 = add(20, 10);
+    console.log(add1);
+  </script>
+</html>
